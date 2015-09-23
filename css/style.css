@@ -1,0 +1,63 @@
+body {
+  background-color:#503519;
+}
+
+.links {
+  padding-left: 5%;
+  padding-right: 5%;
+  border: 2px solid black;
+}
+
+.input-group {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.btn-group{
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.navigation{
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.headline{
+  margin-bottom: 5%;
+}
+
+.storyImage {
+  display: inline-block;
+  vertical-align: middle;
+  height: 150px;
+  width: 200px;
+}
+
+.title,.subtitle{
+  color: white;
+  text-shadow: 2px 2px 1px black;
+  text-align:center;
+}
+
+.stories{
+  background-color: white;
+  margin-bottom: 5px;
+  border: 1px solid black;
+}
+
+.stories:hover{
+  box-shadow: 4px 3px 2px black;
+    
+}
+
+#info {
+  margin-top: 8%;
+}
+
+
+a{
+  outline: none!important;
+  border: none!important;
+  text-decoration: none!important;
+  color: inherit!important;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Camper News</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <div ng-app='app'>
+  <div ng-controller='appCtrl'>
+    <div class='container'>
+      <h1 class='title'>Free Code Camp</h1>
+      <h3 class='subtitle'>Camper News</h3>
+      <div class='row navigation'>
+        <div class='col-xs-12 col-md-8'>
+          <div class='input-group'>
+            <input type='text' ng-model='searchText' class='form-control' placeholder='Search Stories'></input>
+            <span class='input-group-addon'><span class="glyphicon glyphicon-search"></span></span>
+          </div>
+          <!-- input-group -->
+        </div>
+        <!-- col-sm-8 -->
+        <div class='col-xs-12 col-md-4'>
+          <div class="btn-group pull-right">
+            <button type="button" class="btn btn-default" ng-click="sortReverse();">Reverse Order</button>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="dropButton">Sort By
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li ng-click='byTitle();'><a href="#">Title</a></li>
+              <li ng-click='byUpvotes();'><a href="#">Upvotes</a></li>
+              <!--<li ng-click='byComments();'><a href="#">Comments</a></li>-->
+            </ul>
+          </div>
+          <!-- btn-group -->
+        </div>
+        <!-- col-sm-4 -->
+      </div>
+      <!-- row -->
+      <a href=''>
+        <div ng-repeat='story in stories | orderBy:sortBy:reversed | filter:searchText' class='stories' ng-click='showLinks = ! showLinks'>
+          <div class='container'>
+            <div class='articleBox'>
+              <div class='row'>
+                <div class='col-xs-4'>
+                  <img class=storyImage ng-src="{{story.image}}" />
+                </div>
+                <div class='col-xs-8'>
+                  <div class='row headline'>
+                    <h3>{{story.title}}</h3>
+                  </div>
+                  <!-- row -->
+                  <div class='row info'>
+                    <div class='col-xs-6 col-sm-4'>
+                      <p>Posted By: {{story.poster}}</p>
+                    </div>
+                    <!-- col-sm-4 -->
+                    <div class='col-sm-4'>
+                      <!--<p>Comments: {{story.comments}}</p>-->
+                    </div>
+                    <!-- col-sm-4 -->
+                    <div class='col-xs-6 col-sm-4'>
+                      <p>Upvotes: {{story.upvotes}}</p>
+                    </div>
+                    <!-- col-sm-4 -->
+                  </div>
+                  <!-- row -->
+                </div>
+                <!-- col-sm-8 -->
+              </div>
+              <!-- row -->
+            </div>
+            <!-- article box -->
+          </div>
+          <!-- container -->
+          <div class='links' ng-show='showLinks'>
+            <div class='row'>
+              <div class='col-sm-4 col-xs-6'>
+                <a ng-href='{{story.link}}' target="_blank"><h4>View This Story</h4></a>
+              </div>
+              <div class='col-sm-4 xs-hidden'></div>
+              <div class='col-sm-4 col-xs-6'>
+                <a ng-href='{{story.discussLink}}' class='pull-right' target='_blank'><h4>Discuss This Story</h4></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- ng-repeat -->
+    </div>
+    <!-- container -->
+  </div>
+  <!-- ng controller -->
+</div>
+<!-- ng app -->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>
