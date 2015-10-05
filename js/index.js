@@ -20,19 +20,19 @@ app.controller('appCtrl', ['$http', '$scope', function($http, $scope) {
   $scope.byUpvotes = function(){
       $scope.sortBy = '-upvotes';
   }
-  $scope.byComments = function(){
-    $scope.sortBy = '-comments';
-  }
+  //$scope.byComments = function(){
+  //  $scope.sortBy = '-comments';
+  //}
   $scope.clickStory = function(){
     $(this).find('.defaultHidden').show();
   }
-  $scope.findComments = function(article) {
-    var count = 0;
-    article.comments.forEach(function(comment) {
-      count++;
-    })
-    return count;
-  }
+  //$scope.findComments = function(article) {
+  //  var count = 0;
+  //  article.comments.forEach(function(comment) {
+  //    count++;
+  //  })
+  //  return count;
+  //}
   $scope.shortenHeadline = function (headline){
     if (headline.length >= 45){
       var shortHeadline = headline.slice(0,45) + '...';
