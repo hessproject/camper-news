@@ -3,8 +3,13 @@ var app = angular.module('app', []);
 //Camper News removed the user comments section of its articles, and any code related to user comments has been commented out
 
 app.controller('appCtrl', ['$http', '$scope', function($http, $scope) {
+  //api url
   var url = 'http://www.freecodecamp.com/stories/hotStories';
+  
+  //initializing blank array for stories
   $scope.stories = [];
+  
+  //sorting options
   $scope.sortBy = 'title';
   $scope.reversed = false;
   $scope.sortReverse = function(){
@@ -26,6 +31,9 @@ app.controller('appCtrl', ['$http', '$scope', function($http, $scope) {
   $scope.clickStory = function(){
     $(this).find('.defaultHidden').show();
   }
+  
+  //functions to populate story divs (getting links, counting numbers of comments, etc)
+  
   //$scope.findComments = function(article) {
   //  var count = 0;
   //  article.comments.forEach(function(comment) {
@@ -52,6 +60,8 @@ app.controller('appCtrl', ['$http', '$scope', function($http, $scope) {
       return article.image;
     }
   }
+  
+  //actual api call and pushing story to array
   $http.get(url).success(function(data) {
     data.forEach(function(article) {
       var story = {};
