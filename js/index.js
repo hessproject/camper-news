@@ -1,6 +1,7 @@
-var app = angular.module('app', []);
+/*Camper News removed the user comments section of its articles, 
+and any code related to user comments has been commented out */
 
-//Camper News removed the user comments section of its articles, and any code related to user comments has been commented out
+var app = angular.module('app', []);
 
 app.controller('appCtrl', ['$http', '$scope', function($http, $scope) {
   //api url
@@ -61,7 +62,7 @@ app.controller('appCtrl', ['$http', '$scope', function($http, $scope) {
     }
   }
   
-  //actual api call and pushing story to array
+  //api call and pushing story to array
   $http.get(url).success(function(data) {
     data.forEach(function(article) {
       var story = {};
