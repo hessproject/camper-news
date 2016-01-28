@@ -45,6 +45,13 @@ body {
   border: 1px solid black;
 }
 
+.stories a{
+  outline: none;
+  border: none;
+  text-decoration: none;
+  color: inherit;
+}
+
 .stories:hover{
   box-shadow: 4px 3px 2px black;
     
@@ -52,12 +59,4 @@ body {
 
 #info {
   margin-top: 8%;
-}
-
-
-a{
-  outline: none!important;
-  border: none!important;
-  text-decoration: none!important;
-  color: inherit!important;
 }
